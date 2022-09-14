@@ -1,4 +1,4 @@
-import type { ProcessedVideo } from '../common/interfaces';
+import type { ProcessedVideo } from '../../common/interfaces';
 import styles from './videos-table.module.css';
 
 type VideosTableProps = {
