@@ -6,10 +6,11 @@ type ButtonProps = {
   primary?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button = ({ primary, ...props }: ButtonProps) => {
+const Button = ({ primary, ...props }: ButtonProps) => {
   let className = styles.button;
 
   if (primary) className += ` ${styles.primary}`;
 
   return <button className={className} {...props} />;
 };
+export default Button;
