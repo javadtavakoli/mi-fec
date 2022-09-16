@@ -1,7 +1,10 @@
+import { AxiosResponse } from 'axios';
+import AxiosClient from '../common/axios';
 import type { Author } from '../common/interfaces';
 
-export const getAuthors = async (): Promise<Author[]> => {
-  const response = await fetch(`${process.env.REACT_APP_API}/authors`);
-
-  return response.json() as unknown as Author[];
+const Get = async (): Promise<AxiosResponse<Author[]>> => {
+  return AxiosClient.get('authors');
 };
+
+const AuthorsServices = { Get };
+export default AuthorsServices;
