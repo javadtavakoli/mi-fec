@@ -9,7 +9,7 @@ const useLoadVideos = () => {
     loadAll();
   }, []);
   const loadAll = async () => {
-    await dispatch(VideosAsyncActions.GetAll());
+    await dispatch(VideosAsyncActions.GetAll());    
   };
   return { videos };
 };

@@ -15,7 +15,9 @@ export const videosSlice = createSlice({
     builder.addCase(GetAll.fulfilled, (state, action) => {
       state.search = '';
       state.videos = action.payload;
+      
     });
+
   },
 });
 
