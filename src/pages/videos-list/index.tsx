@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { ProcessedVideo } from '../../common/interfaces';
 import { VideosTable } from '../../components/videos-table';
-import { getVideos } from '../../services/videos';
+import useLoadVideos from '../../hooks/loadVideos';
 
 const VideosListPage = () => {
-  const [videos, setVideos] = useState<ProcessedVideo[]>([]);
+  const { videos } = useLoadVideos();
 
-  useEffect(() => {
-    getVideos().then(setVideos);
-  }, []);
   return <VideosTable videos={videos} />;
 };
 export default VideosListPage;
