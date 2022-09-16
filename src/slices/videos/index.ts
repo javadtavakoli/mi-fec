@@ -6,7 +6,7 @@ const initialState: VideosState = {
   search: '',
   videos: [],
 };
-const { GetAll } = VideosAsyncActions;
+const { GetAll, Search } = VideosAsyncActions;
 export const videosSlice = createSlice({
   initialState,
   name: 'videos',
@@ -15,9 +15,11 @@ export const videosSlice = createSlice({
     builder.addCase(GetAll.fulfilled, (state, action) => {
       state.search = '';
       state.videos = action.payload;
-      
     });
-
+    builder.addCase(Search.fulfilled, (state, action) => {
+      state.search = action.meta.arg;
+      state.videos = action.payload;
+    });
   },
 });
 

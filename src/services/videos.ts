@@ -8,7 +8,6 @@ const Get = async (): Promise<ProcessedVideo[]> => {
   const authors = authorsResponse.data;
   const categories = categoriesResponse.data;
   const proccessedVideos: ProcessedVideo[] = [];
-  console.log(authors, 'authors');
 
   authors.forEach((author) => {
     const authorVideos = author.videos.map<ProcessedVideo>((av) => ({
@@ -24,5 +23,17 @@ const Get = async (): Promise<ProcessedVideo[]> => {
 
   return proccessedVideos;
 };
-const VideosServices = { Get };
+const Search = async (search: string): Promise<ProcessedVideo[]> => {
+  const allVideos = await Get();
+  return allVideos.filter((v) => {
+    if (v.name.includes(search)) return true;
+    if (v.author.includes(search)) return true;
+    if (v.highestQualityFormat.formatName.includes(search)) return true;
+    if (v.highestQualityFormat.res.includes(search)) return true;
+    if (v.releaseDate.includes(search)) return true;
+    if (v.categories.some((c) => c.includes(search))) return true;
+    return false;
+  });
+};
+const VideosServices = { Get, Search };
 export default VideosServices;
