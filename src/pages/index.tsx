@@ -1,5 +1,4 @@
 import styles from './layout.module.css';
-import Button from '../components/button';
 import { ReactNode } from 'react';
 type AppLayoutProps = {
   children: ReactNode;
