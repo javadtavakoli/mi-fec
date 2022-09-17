@@ -2,16 +2,22 @@
   padding: 8px;
   border: none;
   border-radius: 4px;
-  color: var(--white);
   cursor: pointer;
 }
 
 .primary {
   background: var(--green);
+  color: var(--white);
 }
 .danger {
   background: var(--red);
+  color: var(--white);
 }
 .info {
   background: var(--light-blue);
+  color: var(--white);
+}
+.focused{
+  background: var(--dark-blue);
+  color: var(--white);
 }

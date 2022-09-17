@@ -3,7 +3,7 @@ import type { ButtonHTMLAttributes } from 'react';
 import styles from './button.module.css';
 
 type ButtonProps = {
-  buttonType?: 'primary' | 'info' | 'danger';
+  buttonType?: 'primary' | 'info' | 'danger' | 'focused';
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = ({ buttonType, ...props }: ButtonProps) => {

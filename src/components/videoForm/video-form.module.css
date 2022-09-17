@@ -1,0 +1,24 @@
+.inputRow{
+    display: flex;
+    margin-bottom: 1em;
+
+}
+.inputRow label{
+    flex: 2;
+}
+.inputRow input,.inputRow select{
+    flex: 10;
+}
+.buttonsRow{
+    display: flex;
+
+}
+.buttonsOffset{
+    flex:2;
+}
+.buttonsCol{
+    flex: 10;
+}
+.buttonsCol button:last-child{
+    margin-left: 0.2em;
+}
