@@ -1,0 +1,22 @@
+.searchInput {
+  border-radius: 5px 0 0 5px;
+  border: 1px solid var(--medium-gray);
+  padding: 0.5em;
+  border-right: none;
+}
+.searchInput:focus-visible {
+  outline: none;
+}
+.searchButton {
+  background: var(--dark-blue);
+  border: 1px solid var(--dark-blue);
+  border-radius: 0 5px 5px 0;
+  color: var(--white);
+  font-weight: 700;
+  border-left: none;
+  padding: 0.5em;
+  cursor: pointer;
+}
+.searchBox{
+    margin-bottom: 1em;
+}
