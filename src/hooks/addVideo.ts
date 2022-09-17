@@ -22,7 +22,6 @@ const useAddVideo = () => {
   };
   const submit = async (values: VideoFormValues) => {
     const author = authors.find((a) => a.id === +values.authorId);
-    console.log(author, values, '123');
 
     if (!author) return;
     const editAuthor: Author = { ...author, videos: [...author.videos] };
