@@ -7,9 +7,7 @@ const Get = async (): Promise<ProcessedVideo[]> => {
   const [categoriesResponse, authorsResponse] = await Promise.all([CategoriesServices.Get(), AuthorsServices.Get()]);
   const authors = authorsResponse.data;
   const categories = categoriesResponse.data;
-  const proccessedVideos: ProcessedVideo[] = [];
-
-  authors.forEach((author) => {
+  const proccessedVideos: ProcessedVideo[] = authors.flatMap((author) => {
     const authorVideos = author.videos.map<ProcessedVideo>((av) => ({
       author: author.name,
       categories: av.catIds.map((catId) => categories.find((c) => c.id === catId)?.name || ''),
@@ -18,9 +16,9 @@ const Get = async (): Promise<ProcessedVideo[]> => {
       highestQualityFormat: VideoFormatTools.HighestFormat(Object.entries(av.formats)),
       releaseDate: av.releaseDate,
     }));
-    proccessedVideos.push(...authorVideos);
+    return authorVideos;
   });
-
+  proccessedVideos.sort((a, b) => a.id - b.id);
   return proccessedVideos;
 };
 const Search = async (search: string): Promise<ProcessedVideo[]> => {
