@@ -6,6 +6,10 @@
   background: var(--dark-gray);
   color: var(--white);
 }
+.header a{
+  color: var(--white);
+  text-decoration: none;
+}
 
 .main {
   padding: 0 16px;
