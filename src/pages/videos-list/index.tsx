@@ -8,6 +8,8 @@ const VideosListPage = () => {
 
   return (
     <>
+      <h1>VManager Demo v0.0.1</h1>
+
       <Formik initialValues={{ search }} onSubmit={searchVideos}>
         {(props: FormikProps<SearchVideosValues>) => (
           <Form>
