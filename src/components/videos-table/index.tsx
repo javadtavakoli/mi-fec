@@ -5,9 +5,10 @@ import styles from './videos-table.module.css';
 
 type VideosTableProps = {
   videos: ProcessedVideo[];
+  deleteVideo: (videoId: number) => void;
 };
 
-export const VideosTable = ({ videos }: VideosTableProps) => (
+export const VideosTable = ({ videos, deleteVideo }: VideosTableProps) => (
   <div className={styles.wrapper}>
     <table className={styles.table}>
       <thead>
@@ -35,7 +36,7 @@ export const VideosTable = ({ videos }: VideosTableProps) => (
               <Link to={`/videos/edit/${video.id}`}>
                 <button>Edit</button>
               </Link>
-              <button>Delete</button>
+              <button onClick={() => deleteVideo(video.id)}>Delete</button>
             </td>
           </tr>
         ))}
