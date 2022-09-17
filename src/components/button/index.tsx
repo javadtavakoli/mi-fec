@@ -3,13 +3,13 @@ import type { ButtonHTMLAttributes } from 'react';
 import styles from './button.module.css';
 
 type ButtonProps = {
-  primary?: boolean;
+  buttonType?: 'primary' | 'info' | 'danger';
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button = ({ primary, ...props }: ButtonProps) => {
+const Button = ({ buttonType, ...props }: ButtonProps) => {
   let className = styles.button;
 
-  if (primary) className += ` ${styles.primary}`;
+  if (buttonType) className += ` ${styles[buttonType]}`;
 
   return <button className={className} {...props} />;
 };

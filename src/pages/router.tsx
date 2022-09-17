@@ -16,7 +16,7 @@ const AppRouter = () => {
           <PagesLayout
             headerExtra={
               <Link to="/videos/add">
-                <Button primary>Add video</Button>
+                <Button buttonType={"primary"}>Add video</Button>
               </Link>
             }>
             <VideosListPage />

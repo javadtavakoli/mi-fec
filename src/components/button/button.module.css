@@ -9,3 +9,9 @@
 .primary {
   background: var(--green);
 }
+.danger {
+  background: var(--red);
+}
+.info {
+  background: var(--light-blue);
+}
