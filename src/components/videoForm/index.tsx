@@ -14,7 +14,7 @@ const VideoForm = (props: VideoFormProps) => {
   return (
     <div>
       <Formik validateOnMount={true} validationSchema={videoFormSchema} initialValues={props.initialValues} onSubmit={props.submit}>
-        {(props: FormikProps<VideoFormValues>) => (
+        {(formProps: FormikProps<VideoFormValues>) => (
           <Form>
             <div>
               <label htmlFor="name">Video name</label>
@@ -34,10 +34,10 @@ const VideoForm = (props: VideoFormProps) => {
                 {({ field }: FieldProps<number>) => <CategoriesSelect {...field} />}
               </Field>
             </div>
-            <button type="submit" disabled={!props.isValid}>
+            <button type="submit" disabled={!formProps.isValid}>
               Submit
             </button>
-            <button>Cancel</button>
+            <button onClick={props.cancel}>Cancel</button>
           </Form>
         )}
       </Formik>

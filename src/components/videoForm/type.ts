@@ -5,5 +5,6 @@ export type VideoFormValues = {
 };
 export type VideoFormProps = {
   submit: (values: VideoFormValues) => void;
+  cancel: () => void;
   initialValues: VideoFormValues;
 };
