@@ -1,4 +1,4 @@
-import VideoForm from '../../components/videoForm';
+import VideoForm from '../../components/video-form';
 import useAddVideo from '../../hooks/addVideo';
 import headingStyle from '../../common/css/heading.module.css';
 

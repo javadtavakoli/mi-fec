@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Author, ProcessedVideo, Video } from '../common/interfaces';
-import FindVideoAuthor from '../common/utils/findVideoAuthor';
-import { VideoFormValues } from '../components/videoForm/type';
+import FindVideoAuthor from '../common/utils/find-video-author';
+import { VideoFormValues } from '../components/video-form/type';
 import AuthorsAsyncActions from '../slices/authors/async';
 import { VideoActions } from '../slices/videos';
 import useLoadAuthors from './loadAuthors';

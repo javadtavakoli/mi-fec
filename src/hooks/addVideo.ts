@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router';
 import { DEFAULT_NEW_FORMAT } from '../common/config/constants';
 import { Author, ProcessedVideo } from '../common/interfaces';
-import RandomDate from '../common/utils/randomDate';
-import VideoIdTools from '../common/utils/videoId';
-import { VideoFormValues } from '../components/videoForm/type';
+import RandomDate from '../common/utils/random-date';
+import VideoIdTools from '../common/utils/video-id';
+import { VideoFormValues } from '../components/video-form/type';
 import AuthorsAsyncActions from '../slices/authors/async';
 import { VideoActions } from '../slices/videos';
 import useLoadAuthors from './loadAuthors';

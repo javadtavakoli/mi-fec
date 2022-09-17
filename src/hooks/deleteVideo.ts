@@ -1,5 +1,5 @@
 import { Author } from '../common/interfaces';
-import FindVideoAuthor from '../common/utils/findVideoAuthor';
+import FindVideoAuthor from '../common/utils/find-video-author';
 import AuthorsAsyncActions from '../slices/authors/async';
 import { VideoActions } from '../slices/videos';
 import useLoadAuthors from './loadAuthors';

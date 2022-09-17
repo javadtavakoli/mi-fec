@@ -1,5 +1,5 @@
 import { useParams } from 'react-router';
-import VideoForm from '../../components/videoForm';
+import VideoForm from '../../components/video-form';
 import useEditVideo from '../../hooks/editVideo';
 
 const EditVideoPage = () => {

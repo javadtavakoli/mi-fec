@@ -1,10 +1,10 @@
 import { Field, Formik, FormikProps, Form, FieldProps } from 'formik';
 import React from 'react';
-import AuthorsSelect from '../authorsSelect';
-import CategoriesSelect from '../categoriesSelect';
+import AuthorsSelect from '../authors-select';
+import CategoriesSelect from '../categories-select';
 import { VideoFormProps, VideoFormValues } from './type';
 import * as Yup from 'yup';
-import TextInput from '../textInput';
+import TextInput from '../text-input';
 import styles from './video-form.module.css';
 import Button from '../button';
 const videoFormSchema = Yup.object().shape({
