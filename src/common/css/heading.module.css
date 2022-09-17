@@ -1,0 +1,4 @@
+.pageHeading{
+    border-bottom: 1px solid var(--medium-gray);
+    padding:0.2em 0;
+}
