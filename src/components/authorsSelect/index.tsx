@@ -1,9 +1,10 @@
+import { SelectHTMLAttributes } from 'react';
 import useLoadAuthors from '../../hooks/loadAuthors';
 
-const AuthorsSelect = () => {
+const AuthorsSelect = (props:SelectHTMLAttributes<HTMLSelectElement>) => {
   const { authors } = useLoadAuthors();
   return (
-    <select id="author">
+    <select  {...props}>
       {authors.map((author) => (
         <option key={author.id.toString()} value={author.id}>
           {author.name}
