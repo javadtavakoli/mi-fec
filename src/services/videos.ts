@@ -4,6 +4,8 @@ import AuthorsServices from './authors';
 import CategoriesServices from './categories';
 
 const Get = async (): Promise<ProcessedVideo[]> => {
+  console.log("get the video");
+
   const [categoriesResponse, authorsResponse] = await Promise.all([CategoriesServices.Get(), AuthorsServices.Get()]);
   const authors = authorsResponse.data;
   const categories = categoriesResponse.data;
@@ -19,6 +21,7 @@ const Get = async (): Promise<ProcessedVideo[]> => {
     return authorVideos;
   });
   proccessedVideos.sort((a, b) => a.id - b.id);
+  
   return proccessedVideos;
 };
 const Search = async (search: string): Promise<ProcessedVideo[]> => {
