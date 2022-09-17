@@ -3,6 +3,7 @@ import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import PagesLayout from '.';
 import Button from '../components/button';
 import AddVideoPage from './add-video';
+import EditVideoPage from './edit-video';
 import VideosListPage from './videos-list';
 
 const AppRouter = () => {
@@ -12,7 +13,12 @@ const AppRouter = () => {
       <Route
         path={'videos'}
         element={
-          <PagesLayout headerExtra={<Link to="/videos/add"><Button primary>Add video</Button></Link>}>
+          <PagesLayout
+            headerExtra={
+              <Link to="/videos/add">
+                <Button primary>Add video</Button>
+              </Link>
+            }>
             <VideosListPage />
           </PagesLayout>
         }
@@ -22,6 +28,14 @@ const AppRouter = () => {
         element={
           <PagesLayout>
             <AddVideoPage />
+          </PagesLayout>
+        }
+      />
+      <Route
+        path={'videos/edit/:videoId'}
+        element={
+          <PagesLayout>
+            <EditVideoPage />
           </PagesLayout>
         }
       />

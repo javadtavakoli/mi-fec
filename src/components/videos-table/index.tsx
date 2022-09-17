@@ -1,3 +1,5 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import type { ProcessedVideo } from '../../common/interfaces';
 import styles from './videos-table.module.css';
 
@@ -30,7 +32,9 @@ export const VideosTable = ({ videos }: VideosTableProps) => (
             </td>
             <td>{video.releaseDate}</td>
             <td>
-              <button>Edit</button>
+              <Link to={`/videos/edit/${video.id}`}>
+                <button>Edit</button>
+              </Link>
               <button>Delete</button>
             </td>
           </tr>
