@@ -1,5 +1,5 @@
 import { ProcessedVideo } from '../common/interfaces';
-import VideoFormatTools from '../common/utils/videoFormatTools';
+import VideoFormatTools from '../common/utils/videoFormat';
 import AuthorsServices from './authors';
 import CategoriesServices from './categories';
 
