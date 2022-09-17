@@ -1,11 +1,14 @@
 import { SelectHTMLAttributes } from 'react';
 import useLoadAuthors from '../../hooks/loadAuthors';
+import { useAppSelector } from '../../hooks/reduxHooks';
 
 const AuthorsSelect = (props: SelectHTMLAttributes<HTMLSelectElement>) => {
-  const { authors } = useLoadAuthors();
+  const { authors } = useAppSelector((state) => state.authors);
   return (
     <select {...props}>
-      <option disabled={true} value={-1}>{props.placeholder}</option>
+      <option disabled={true} value={-1}>
+        {props.placeholder}
+      </option>
       {authors.map((author) => (
         <option key={author.id.toString()} value={author.id}>
           {author.name}
