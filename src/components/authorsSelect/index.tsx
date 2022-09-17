@@ -1,5 +1,4 @@
 import { SelectHTMLAttributes } from 'react';
-import useLoadAuthors from '../../hooks/loadAuthors';
 import { useAppSelector } from '../../hooks/reduxHooks';
 
 const AuthorsSelect = (props: SelectHTMLAttributes<HTMLSelectElement>) => {
