@@ -1,7 +1,8 @@
 import React from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import PagesLayout from '.';
 import Button from '../components/button';
+import AddVideoPage from './add-video';
 import VideosListPage from './videos-list';
 
 const AppRouter = () => {
@@ -11,8 +12,16 @@ const AppRouter = () => {
       <Route
         path={'videos'}
         element={
-          <PagesLayout headerExtra={<Button primary>Add video</Button>}>
+          <PagesLayout headerExtra={<Link to="/videos/add"><Button primary>Add video</Button></Link>}>
             <VideosListPage />
+          </PagesLayout>
+        }
+      />
+      <Route
+        path={'videos/add'}
+        element={
+          <PagesLayout>
+            <AddVideoPage />
           </PagesLayout>
         }
       />
