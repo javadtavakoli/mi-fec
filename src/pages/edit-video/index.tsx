@@ -7,7 +7,7 @@ const EditVideoPage = () => {
   const { submit, cancel, initialVideo } = useEditVideo(parseInt(videoId || '1'));
   return initialVideo ? (
     <>
-      <h1>Edit Video</h1>
+      <h1>Edit Video: {initialVideo.name}</h1>
       <VideoForm cancel={cancel} submit={submit} initialValues={initialVideo} />
     </>
   ) : (
