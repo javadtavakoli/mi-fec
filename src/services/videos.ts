@@ -4,7 +4,6 @@ import AuthorsServices from './authors';
 import CategoriesServices from './categories';
 
 const Get = async (): Promise<ProcessedVideo[]> => {
-  console.log("get the video");
 
   const [categoriesResponse, authorsResponse] = await Promise.all([CategoriesServices.Get(), AuthorsServices.Get()]);
   const authors = authorsResponse.data;
